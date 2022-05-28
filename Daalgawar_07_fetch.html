@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            height:100vh;
+            background-color:antiquewhite;
+        }
+        .header{
+            display:flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <input id="input">
+            <button onclick="go()">Go</button>
+        </div>
+        <div class="images">
+            <img id="myIMG"/>
+            <img id="myIMG1"/>
+            <img id="myIMG2"/>
+            <img id="myIMG3"/>
+            <img id="myIMG4"/>
+        </div>
+        
+    </div>
+    <script>
+        go = function(){
+            if(input.value == "cat"){
+                async function init(){
+                const response = await fetch("https://api.giphy.com/v1/gifs/search?api_key=ni61EcWlFHOJUbFtlWNGNzceW85QNnWW&q=cat&limit=25&offset=0&rating=g&lang=en")
+                const body = await response.json()
+                console.log(body.data[0])
+                const imgTag = document.querySelector("#myIMG")
+                const imgTag1 = document.querySelector("#myIMG1")
+                const imgTag2 = document.querySelector("#myIMG2")
+                const imgTag3 = document.querySelector("#myIMG3")
+                const imgTag4 = document.querySelector("#myIMG4")
+                imgTag.src = body.data[0].images.original.url  
+                imgTag1.src = body.data[1].images.original.url 
+                imgTag2.src = body.data[2].images.original.url 
+                imgTag3.src = body.data[3].images.original.url 
+                imgTag4.src = body.data[4].images.original.url 
+                }
+                init()
+                input.value = ""
+                }
+            if(input.value == "dog"){
+                async function init(){
+                const response = await fetch("https://api.giphy.com/v1/gifs/search?api_key=ni61EcWlFHOJUbFtlWNGNzceW85QNnWW&q=dog&limit=25&offset=0&rating=g&lang=en")
+                const body = await response.json()
+                console.log(body.data[0])
+                const imgTag = document.querySelector("#myIMG")
+                const imgTag1 = document.querySelector("#myIMG1")
+                const imgTag2 = document.querySelector("#myIMG2")
+                const imgTag3 = document.querySelector("#myIMG3")
+                const imgTag4 = document.querySelector("#myIMG4")
+                imgTag.src = body.data[0].images.original.url 
+                imgTag1.src = body.data[1].images.original.url 
+                imgTag2.src = body.data[2].images.original.url 
+                imgTag3.src = body.data[3].images.original.url 
+                imgTag4.src = body.data[4].images.original.url 
+                }
+                init()
+                input.value = ""
+                }
+            if(input.value == "james harden"){
+                async function init(){
+                const response = await fetch("https://api.giphy.com/v1/gifs/search?api_key=ni61EcWlFHOJUbFtlWNGNzceW85QNnWW&q=james+harden&limit=25&offset=0&rating=g&lang=en")
+                const body = await response.json()
+                console.log(body.data[0])
+                const imgTag = document.querySelector("#myIMG")
+                const imgTag1 = document.querySelector("#myIMG1")
+                const imgTag2 = document.querySelector("#myIMG2")
+                const imgTag3 = document.querySelector("#myIMG3")
+                const imgTag4 = document.querySelector("#myIMG4")
+                imgTag.src = body.data[0].images.original.url 
+                imgTag1.src = body.data[1].images.original.url 
+                imgTag2.src = body.data[2].images.original.url 
+                imgTag3.src = body.data[3].images.original.url 
+                imgTag4.src = body.data[4].images.original.url 
+                }
+                init()
+                input.value = ""
+                }
+            }
+            
+           
+    </script>
+</body>
+</html>
